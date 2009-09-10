@@ -35,7 +35,7 @@
  * @since      File available since Release 0.1.0
  */
 
-// {{{ Stagehand_AccessControl_Matcher_RegexMatcher
+// {{{ Stagehand_AccessControl_Matcher_RegexMatcherTest
 
 /**
  * @package    Stagehand_AccessControl
@@ -44,7 +44,7 @@
  * @version    Release: @package_version@
  * @since      Class available since Release 0.1.0
  */
-class Stagehand_AccessControl_Matcher_RegexMatcher implements Stagehand_AccessControl_Matcher
+class Stagehand_AccessControl_Matcher_RegexMatcherTest extends PHPUnit_Framework_TestCase
 {
 
     // {{{ properties
@@ -71,20 +71,14 @@ class Stagehand_AccessControl_Matcher_RegexMatcher implements Stagehand_AccessCo
      * @access public
      */
 
-    // }}}
-    // {{{ match()
-
     /**
-     * @param string $target
-     * @param string $rule
-     * @return boolean
+     * @test
      */
-    public function match($target, $rule)
+    public function quoteSlashes()
     {
-        return (boolean)preg_match(
-                            '/' . str_replace('/', '\\/', $rule) . '/',
-                            $target
-                                   );
+        $matcher = new Stagehand_AccessControl_Matcher_RegexMatcher();
+
+        $this->assertTrue($matcher->match('192.168.0.0/24', '^192\.168\.0\.0/24$'));
     }
 
     /**#@-*/
