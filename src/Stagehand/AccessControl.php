@@ -85,7 +85,7 @@ class Stagehand_AccessControl
     public function __construct(Stagehand_AccessControl_Order $order)
     {
         $this->order = $order;
-        $this->matcher = new Stagehand_AccessControl_Matcher_Regex();
+        $this->setMatcher(new Stagehand_AccessControl_Matcher_Regex());
     }
 
     // }}}
@@ -152,6 +152,17 @@ class Stagehand_AccessControl
     public function allow($rule)
     {
         $this->allowRules[] = $rule;
+    }
+
+    // }}}
+    // {{{ setMatcher()
+
+    /**
+     * @param Stagehand_AccessControl_Matcher $matcher
+     */
+    public function setMatcher(Stagehand_AccessControl_Matcher $matcher)
+    {
+        $this->matcher = $matcher;
     }
 
     /**#@-*/
