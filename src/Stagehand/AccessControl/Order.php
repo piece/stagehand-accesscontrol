@@ -47,7 +47,10 @@
 interface Stagehand_AccessControl_Order
 {
 
-    // }}}
+    /**#@+
+     * @access public
+     */
+
     // {{{ firstPassProcess()
 
     /**
