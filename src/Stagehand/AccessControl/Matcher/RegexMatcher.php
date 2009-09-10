@@ -35,7 +35,7 @@
  * @since      File available since Release 0.1.0
  */
 
-// {{{ Stagehand_AccessControl_Matcher_Regex
+// {{{ Stagehand_AccessControl_Matcher_RegexMatcher
 
 /**
  * @package    Stagehand_AccessControl
@@ -44,7 +44,7 @@
  * @version    Release: @package_version@
  * @since      Class available since Release 0.1.0
  */
-class Stagehand_AccessControl_Matcher_Regex implements Stagehand_AccessControl_Matcher
+class Stagehand_AccessControl_Matcher_RegexMatcher implements Stagehand_AccessControl_Matcher
 {
 
     // {{{ properties
