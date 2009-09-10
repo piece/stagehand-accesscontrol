@@ -115,6 +115,18 @@ class Stagehand_AccessControlOnOrderDenyAllowTest extends Stagehand_AccessContro
         $this->assertTrue($this->control->evaluate('192.168.0.1'));
     }
 
+    /**
+     * @test
+     */
+    public function setAnyMatcher()
+    {
+        $this->control->setMatcher(new Stagehand_AccessControlTest_EqualMatcher());
+        $this->control->deny('^192\.168\.0\.1$');
+
+        $this->assertTrue($this->control->evaluate('192.168.0.1'));
+        $this->assertFalse($this->control->evaluate('^192\.168\.0\.1$'));
+    }
+
     /**#@-*/
 
     /**#@+
@@ -211,6 +223,18 @@ class Stagehand_AccessControlOnOrderAllowDenyTest extends Stagehand_AccessContro
         $this->control->deny('^192\.168\.0\.1$');
 
         $this->assertFalse($this->control->evaluate('192.168.0.1'));
+    }
+
+    /**
+     * @test
+     */
+    public function setAnyMatcher()
+    {
+        $this->control->setMatcher(new Stagehand_AccessControlTest_EqualMatcher());
+        $this->control->allow('^192\.168\.0\.1$');
+
+        $this->assertFalse($this->control->evaluate('192.168.0.1'));
+        $this->assertTrue($this->control->evaluate('^192\.168\.0\.1$'));
     }
 
     /**#@-*/
