@@ -35,7 +35,7 @@
  * @since      File available since Release 0.1.0
  */
 
-// {{{ Stagehand_AccessControlTest_EqualMatcher
+// {{{ Stagehand_AccessControl_Matcher_EqualMatcher
 
 /**
  * @package    Stagehand_AccessControl
@@ -44,7 +44,7 @@
  * @version    Release: @package_version@
  * @since      Class available since Release 0.1.0
  */
-class Stagehand_AccessControlTest_EqualMatcher implements Stagehand_AccessControl_Matcher
+class Stagehand_AccessControl_Matcher_EqualMatcher implements Stagehand_AccessControl_Matcher
 {
 
     // {{{ properties
