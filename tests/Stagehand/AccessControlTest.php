@@ -65,20 +65,25 @@ class Stagehand_AccessControlOnOrderDenyAllowTest extends PHPUnit_Framework_Test
      * @access private
      */
 
+    private $control;
+
     /**#@-*/
 
     /**#@+
      * @access public
      */
 
+    public function setUp()
+    {
+        $this->control = Stagehand_AccessControl::denyAllow();
+    }
+
     /**
      * @test
      */
     public function allowTheTargetByDefault()
     {
-        $control = Stagehand_AccessControl::denyAllow();
-
-        $this->assertTrue($control->evaluate('192.168.0.1'));
+        $this->assertTrue($this->control->evaluate('192.168.0.1'));
     }
 
     /**
@@ -86,10 +91,9 @@ class Stagehand_AccessControlOnOrderDenyAllowTest extends PHPUnit_Framework_Test
      */
     public function denyTheTargetMatchedWithADenyRule()
     {
-        $control = Stagehand_AccessControl::denyAllow();
-        $control->deny('^192\.168\.0\.1$');
+        $this->control->deny('^192\.168\.0\.1$');
 
-        $this->assertFalse($control->evaluate('192.168.0.1'));
+        $this->assertFalse($this->control->evaluate('192.168.0.1'));
     }
 
     /**
@@ -97,10 +101,9 @@ class Stagehand_AccessControlOnOrderDenyAllowTest extends PHPUnit_Framework_Test
      */
     public function allowTheTargetMatchedWithAnAllowRule()
     {
-        $control = Stagehand_AccessControl::denyAllow();
-        $control->allow('^192\.168\.0\.1$');
+        $this->control->allow('^192\.168\.0\.1$');
 
-        $this->assertTrue($control->evaluate('192.168.0.1'));
+        $this->assertTrue($this->control->evaluate('192.168.0.1'));
     }
 
     /**
@@ -108,11 +111,10 @@ class Stagehand_AccessControlOnOrderDenyAllowTest extends PHPUnit_Framework_Test
      */
     public function allowTheTargetMatchedWithAnAllowRuleEvenThoughTheTargetMatchADenyRule()
     {
-        $control = Stagehand_AccessControl::denyAllow();
-        $control->deny('^192\.168\.0\.1$');
-        $control->allow('^192\.168\.0\.1$');
+        $this->control->deny('^192\.168\.0\.1$');
+        $this->control->allow('^192\.168\.0\.1$');
 
-        $this->assertTrue($control->evaluate('192.168.0.1'));
+        $this->assertTrue($this->control->evaluate('192.168.0.1'));
     }
 
     /**#@-*/
@@ -163,20 +165,25 @@ class Stagehand_AccessControlOnOrderAllowDenyTest extends PHPUnit_Framework_Test
      * @access private
      */
 
+    private $control;
+
     /**#@-*/
 
     /**#@+
      * @access public
      */
 
+    public function setUp()
+    {
+        $this->control = Stagehand_AccessControl::allowDeny();
+    }
+
     /**
      * @test
      */
     public function denyTheTargetByDefault()
     {
-        $control = Stagehand_AccessControl::allowDeny();
-
-        $this->assertFalse($control->evaluate('192.168.0.1'));
+        $this->assertFalse($this->control->evaluate('192.168.0.1'));
     }
 
     /**
@@ -184,10 +191,9 @@ class Stagehand_AccessControlOnOrderAllowDenyTest extends PHPUnit_Framework_Test
      */
     public function allowTheTargetMatchedWithAnAllowRule()
     {
-        $control = Stagehand_AccessControl::allowDeny();
-        $control->allow('^192\.168\.0\.1$');
+        $this->control->allow('^192\.168\.0\.1$');
 
-        $this->assertTrue($control->evaluate('192.168.0.1'));
+        $this->assertTrue($this->control->evaluate('192.168.0.1'));
     }
 
     /**
@@ -195,10 +201,9 @@ class Stagehand_AccessControlOnOrderAllowDenyTest extends PHPUnit_Framework_Test
      */
     public function denyTheTargetMatchedWithADenyRule()
     {
-        $control = Stagehand_AccessControl::allowDeny();
-        $control->deny('^192\.168\.0\.1$');
+        $this->control->deny('^192\.168\.0\.1$');
 
-        $this->assertFalse($control->evaluate('192.168.0.1'));
+        $this->assertFalse($this->control->evaluate('192.168.0.1'));
     }
 
     /**
@@ -206,11 +211,10 @@ class Stagehand_AccessControlOnOrderAllowDenyTest extends PHPUnit_Framework_Test
      */
     public function denyTheTargetMatchedWithADenyRuleEvenThoughTheTargetMatchAnAllowRule()
     {
-        $control = Stagehand_AccessControl::allowDeny();
-        $control->allow('^192\.168\.0\.1$');
-        $control->deny('^192\.168\.0\.1$');
+        $this->control->allow('^192\.168\.0\.1$');
+        $this->control->deny('^192\.168\.0\.1$');
 
-        $this->assertFalse($control->evaluate('192.168.0.1'));
+        $this->assertFalse($this->control->evaluate('192.168.0.1'));
     }
 
     /**#@-*/
