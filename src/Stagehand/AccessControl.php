@@ -62,6 +62,7 @@ class Stagehand_AccessControl
     protected $denyRules = array();
     protected $allowRules = array();
     protected $order;
+    protected $matcher;
 
     /**#@-*/
 
@@ -84,6 +85,7 @@ class Stagehand_AccessControl
     public function __construct(Stagehand_AccessControl_Order $order)
     {
         $this->order = $order;
+        $this->matcher = new Stagehand_AccessControl_Matcher_Regex();
     }
 
     // }}}
@@ -168,7 +170,7 @@ class Stagehand_AccessControl
     protected function matchDenyRules($target)
     {
         foreach ($this->denyRules as $denyRule) {
-            if (preg_match("/$denyRule/", $target)) {
+            if ($this->matcher->match($target, $denyRule)) {
                 return Stagehand_AccessControl_AccessState::DENY;
             }
         }
@@ -186,7 +188,7 @@ class Stagehand_AccessControl
     protected function matchAllowRules($target)
     {
         foreach ($this->allowRules as $allowRule) {
-            if (preg_match("/$allowRule/", $target)) {
+            if ($this->matcher->match($target, $allowRule)) {
                 return Stagehand_AccessControl_AccessState::ALLOW;
             }
         }
