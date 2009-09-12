@@ -107,7 +107,7 @@ class Stagehand_AccessControl
      */
     public static function allowDeny()
     {
-        return new self(new Stagehand_AccessControl_Order_AllowDeny());
+        return new self(new Stagehand_AccessControl_Order_AllowDenyOrder());
     }
 
     // }}}
