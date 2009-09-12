@@ -35,7 +35,7 @@
  * @since      File available since Release 0.1.0
  */
 
-// {{{ Stagehand_AccessControl_Order_DenyAllow
+// {{{ Stagehand_AccessControl_Order_DenyAllowOrder
 
 /**
  * @package    Stagehand_AccessControl
@@ -44,7 +44,7 @@
  * @version    Release: @package_version@
  * @since      Class available since Release 0.1.0
  */
-class Stagehand_AccessControl_Order_DenyAllow implements Stagehand_AccessControl_Order
+class Stagehand_AccessControl_Order_DenyAllowOrder implements Stagehand_AccessControl_Order
 {
 
     // {{{ properties
