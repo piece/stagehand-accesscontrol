@@ -44,7 +44,7 @@ set_include_path(realpath(dirname(__FILE__) . '/../src') . PATH_SEPARATOR .
 require_once 'PHPUnit/Framework.php';
 require_once 'Stagehand/Autoload.php';
 
-$loader = Stagehand_Autoload::getLegacyLoader();
+$loader = Stagehand_Autoload::legacyLoader();
 $loader->addNamespace('Stagehand');
 Stagehand_Autoload::register($loader);
 
