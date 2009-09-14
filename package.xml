@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.9.0" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+    http://pear.php.net/dtd/tasks-1.0.xsd
+    http://pear.php.net/dtd/package-2.0
+    http://pear.php.net/dtd/package-2.0.xsd">
+ <name>Stagehand_AccessControl</name>
+ <channel>pear.piece-framework.com</channel>
+ <summary>An access control object</summary>
+ <description>Stagehand_AccessControl provides an object for access control. You can specify rules to allow access and deny access, evaluate the target such like the following:
+
+ $denyAllow = Stagehand_AccessControl::denyAllow();
+ $denyAllow-&gt;deny(&apos;^192\.168\.0\.1$&apos;);
+ if ($denyAllow-&gt;evaluate(&apos;192.168.0.1&apos;) == Stagehand_AccessControl_AccessState::ALLOW) {
+     // access granted
+     ...
+ } else {
+     // access denied
+     ...
+ }
+
+The evaluation process works like access control by the Order directive of Apache. Stagehand_AccessControl::denyAllow() creates an object corresponding to Deny,Allow of Apache, and Stagehand_AccessControl::allowDeny() creates an object corresponding to Allow,Deny.
+
+Since the evaluation is done by a matcher, the evaluation logic can be changed by replacing the matcher with another. The default is RegexMatcher which matches by regular expressions.</description>
+ <lead>
+  <name>KUBO Atsuhiro</name>
+  <user>iteman</user>
+  <email>kubo@iteman.jp</email>
+  <active>yes</active>
+ </lead>
+ <date>2009-09-14</date>
+ <time>20:45:42</time>
+ <version>
+  <release>0.1.0</release>
+  <api>0.1.0</api>
+ </version>
+ <stability>
+  <release>beta</release>
+  <api>beta</api>
+ </stability>
+ <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+ <notes>
+The first release of Stagehand_AccessControl.
+ </notes>
+ <contents>
+  <dir baseinstalldir="/" name="/">
+   <dir name="doc">
+    <file name="LICENSE" role="doc">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
+   </dir> <!-- /doc -->
+   <dir name="src">
+    <dir name="Stagehand">
+     <dir name="AccessControl">
+      <dir name="Matcher">
+       <file name="EqualMatcher.php" role="php">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
+       <file name="RegexMatcher.php" role="php">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
+      </dir> <!-- /src/Stagehand/AccessControl/Matcher -->
+      <dir name="Order">
+       <file name="AllowDenyOrder.php" role="php">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
+       <file name="DenyAllowOrder.php" role="php">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
+      </dir> <!-- /src/Stagehand/AccessControl/Order -->
+      <file name="AccessState.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file name="Matcher.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file name="Order.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+     </dir> <!-- /src/Stagehand/AccessControl -->
+     <file name="AccessControl.php" role="php">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+    </dir> <!-- /src/Stagehand -->
+   </dir> <!-- /src -->
+   <dir name="tests">
+    <dir name="Stagehand">
+     <dir name="AccessControl">
+      <dir name="Matcher">
+       <file name="RegexMatcherTest.php" role="test">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
+      </dir> <!-- /tests/Stagehand/AccessControl/Matcher -->
+     </dir> <!-- /tests/Stagehand/AccessControl -->
+     <file name="AccessControlTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+    </dir> <!-- /tests/Stagehand -->
+    <file name="prepare.php" role="test">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
+   </dir> <!-- /tests -->
+  </dir> <!-- / -->
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.0.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.3</min>
+   </pearinstaller>
+   <package>
+    <name>Stagehand_Autoload</name>
+    <channel>pear.piece-framework.com</channel>
+    <min>0.3.0</min>
+   </package>
+   <extension>
+    <name>pcre</name>
+   </extension>
+  </required>
+ </dependencies>
+ <phprelease />
+ <changelog>
+  <release>
+   <version>
+    <release>0.1.0</release>
+    <api>0.1.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2009-09-14</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+   <notes>
+The first release of Stagehand_AccessControl.
+   </notes>
+  </release>
+ </changelog>
+</package>
