@@ -1,0 +1,5 @@
+#Tue Sep 07 02:28:21 JST 2010
+eclipse.preferences.version=1
+preload_script=/stagehand-accesscontrol/tests/prepare.php
+test_folders=/stagehand-accesscontrol/tests
+testing_framework=PHPUnit
