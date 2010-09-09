@@ -27,8 +27,8 @@ Since the evaluation is done by a matcher, the evaluation logic can be changed b
   <email>kubo@iteman.jp</email>
   <active>yes</active>
  </lead>
- <date>2010-09-08</date>
- <time>20:51:03</time>
+ <date>2010-09-09</date>
+ <time>13:45:34</time>
  <version>
   <release>1.0.0</release>
   <api>0.1.0</api>
@@ -46,14 +46,14 @@ The features of Stagehand_AccessControl 1.0.0 is the same as Stagehand_AccessCon
  <contents>
   <dir baseinstalldir="/" name="/">
    <file baseinstalldir="/" md5sum="58e136c57c700bf1055c7d67caf9656a" name="doc/LICENSE" role="doc" />
-   <file baseinstalldir="/" md5sum="3d4b8ed659510123f66da9f4356e09fc" name="Stagehand/AccessControl.php" role="php" />
-   <file baseinstalldir="/" md5sum="f35b43cfbe846135ad13fb6d4d79483d" name="Stagehand/AccessControl/AccessState.php" role="php" />
-   <file baseinstalldir="/" md5sum="bbecbecf9deb642f758e0e88da09031a" name="Stagehand/AccessControl/Matcher.php" role="php" />
-   <file baseinstalldir="/" md5sum="f9a8c3356dec097a401ac6260c0743b4" name="Stagehand/AccessControl/Order.php" role="php" />
-   <file baseinstalldir="/" md5sum="9803b4dd6f4d3c6ae5a71d76f0cf0e6f" name="Stagehand/AccessControl/Matcher/EqualMatcher.php" role="php" />
-   <file baseinstalldir="/" md5sum="b18ba005c16df349c4fef686b8c06a3d" name="Stagehand/AccessControl/Matcher/RegexMatcher.php" role="php" />
-   <file baseinstalldir="/" md5sum="7862b4bfa0e734a304f18696dd6eef44" name="Stagehand/AccessControl/Order/AllowDenyOrder.php" role="php" />
-   <file baseinstalldir="/" md5sum="2d45f44526e4c87ffc248ff9ad4971b3" name="Stagehand/AccessControl/Order/DenyAllowOrder.php" role="php" />
+   <file baseinstalldir="/" md5sum="b3dcb583cbad4ad2cce6cb4b0140d63e" name="Stagehand/AccessControl.php" role="php" />
+   <file baseinstalldir="/" md5sum="6ffe823827265d425b5f7a05d0c58b81" name="Stagehand/AccessControl/AccessState.php" role="php" />
+   <file baseinstalldir="/" md5sum="1038c24b64732583cb9e4d179e2300d8" name="Stagehand/AccessControl/Matcher.php" role="php" />
+   <file baseinstalldir="/" md5sum="030cbb5385a8956c3b2bfaeea7947e58" name="Stagehand/AccessControl/Order.php" role="php" />
+   <file baseinstalldir="/" md5sum="229b8be62726852aa952f77b80db075c" name="Stagehand/AccessControl/Matcher/EqualMatcher.php" role="php" />
+   <file baseinstalldir="/" md5sum="c80498ff1d77b83750c5c5e604f8ae0d" name="Stagehand/AccessControl/Matcher/RegexMatcher.php" role="php" />
+   <file baseinstalldir="/" md5sum="3438c93d26580f4b18ae0321d45a42d2" name="Stagehand/AccessControl/Order/AllowDenyOrder.php" role="php" />
+   <file baseinstalldir="/" md5sum="79bedffb5ccf5a46aea81c4d96f0fb67" name="Stagehand/AccessControl/Order/DenyAllowOrder.php" role="php" />
   </dir>
  </contents>
  <dependencies>
@@ -100,7 +100,7 @@ The first release of Stagehand_AccessControl.
     <release>stable</release>
     <api>stable</api>
    </stability>
-   <date>2010-09-08</date>
+   <date>2010-09-09</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
    <notes>
 This is the first stable release of Stagehand_AccessControl.

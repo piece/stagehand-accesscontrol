@@ -73,6 +73,11 @@ Since the evaluation is done by a matcher, the evaluation logic can be changed b
     </copy>
     <copy todir="${build.dir}">
       <fileset dir="${src.dir}"/>
+      <filterchain>
+        <replacetokens begintoken="@" endtoken="@">
+          <token key="package_version" value="${package.releaseversion}"/>
+        </replacetokens>
+      </filterchain>
     </copy>
   </target>
 
