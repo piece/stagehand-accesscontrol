@@ -35,6 +35,61 @@
  * @since      File available since Release 0.1.0
  */
 
+// {{{ Stagehand_AccessControlTest
+
+/**
+ * @package    Stagehand_AccessControl
+ * @copyright  2009 KUBO Atsuhiro <kubo@iteman.jp>
+ * @license    http://www.opensource.org/licenses/bsd-license.php  New BSD License
+ * @version    Release: @package_version@
+ * @since      Class available since Release 0.1.0
+ */
+abstract class Stagehand_AccessControlTest extends PHPUnit_Framework_TestCase
+{
+
+    // {{{ properties
+
+    /**#@+
+     * @access public
+     */
+
+    /**#@-*/
+
+    /**#@+
+     * @access protected
+     */
+
+    protected $control;
+
+    /**#@-*/
+
+    /**#@+
+     * @access private
+     */
+
+    /**#@-*/
+
+    /**#@+
+     * @access public
+     */
+
+    /**#@-*/
+
+    /**#@+
+     * @access protected
+     */
+
+    /**#@-*/
+
+    /**#@+
+     * @access private
+     */
+
+    /**#@-*/
+
+    // }}}
+}
+
 // {{{ Stagehand_AccessControlOnOrderDenyAllowTest
 
 /**
@@ -236,61 +291,6 @@ class Stagehand_AccessControlOnOrderAllowDenyTest extends Stagehand_AccessContro
         $this->assertFalse($this->control->evaluate('192.168.0.1'));
         $this->assertTrue($this->control->evaluate('^192\.168\.0\.1$'));
     }
-
-    /**#@-*/
-
-    /**#@+
-     * @access protected
-     */
-
-    /**#@-*/
-
-    /**#@+
-     * @access private
-     */
-
-    /**#@-*/
-
-    // }}}
-}
-
-// {{{ Stagehand_AccessControlTest
-
-/**
- * @package    Stagehand_AccessControl
- * @copyright  2009 KUBO Atsuhiro <kubo@iteman.jp>
- * @license    http://www.opensource.org/licenses/bsd-license.php  New BSD License
- * @version    Release: @package_version@
- * @since      Class available since Release 0.1.0
- */
-abstract class Stagehand_AccessControlTest extends PHPUnit_Framework_TestCase
-{
-
-    // {{{ properties
-
-    /**#@+
-     * @access public
-     */
-
-    /**#@-*/
-
-    /**#@+
-     * @access protected
-     */
-
-    protected $control;
-
-    /**#@-*/
-
-    /**#@+
-     * @access private
-     */
-
-    /**#@-*/
-
-    /**#@+
-     * @access public
-     */
 
     /**#@-*/
 
